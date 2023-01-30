@@ -29,10 +29,6 @@
     height: 0;
   }
 
-  @include respond(phone) {
-    width: 50rem;
-  }
-
   &:hover {
     width: 80rem;
     height: 25rem;
@@ -61,7 +57,7 @@
   }
 
   @include respond(phone) {
-    width: 50rem;
+    width: 40rem;
   }
 }
 
