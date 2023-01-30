@@ -80,6 +80,15 @@
       "a b"
       "c d"
       "e f";
+    @include respond(tab-land) {
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f";
+    }
   }
 
   &__1stBubble {
