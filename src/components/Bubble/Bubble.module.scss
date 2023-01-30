@@ -1,3 +1,5 @@
+@import "../../assets/Mixins/Mixins.module.scss";
+
 .Container {
   border: 1px solid var(--cl-gold);
   border-radius: 1rem;
@@ -14,10 +16,52 @@
   transition: all 1s ease;
   line-height: 1.5;
 
+  @include respond(smaller-screen) {
+    width: 50rem;
+  }
+
+  @include respond(notebook) {
+    width: 40rem;
+  }
+
+  @include respond(tab-land) {
+    display: none;
+    height: 0;
+  }
+
+  @include respond(phone) {
+    width: 50rem;
+  }
+
   &:hover {
     width: 80rem;
     height: 25rem;
     box-shadow: 0 2rem 4rem var(--cl-orange);
+  }
+}
+
+.ContainerCopy {
+  border: 1px solid var(--cl-gold);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem var(--cl-gold);
+  padding: 1rem;
+  width: 60rem;
+  height: 15rem;
+  background-color: var(--cl-black);
+  color: var(--cl-yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  line-height: 1.5;
+
+  @include respond(hover) {
+    display: none;
+    height: 0;
+  }
+
+  @include respond(phone) {
+    width: 50rem;
   }
 }
 
@@ -37,10 +81,17 @@
 
 .TrulyHidden {
   display: none;
+  height: 0;
 }
 
 .Link {
   width: 2rem;
   height: 2rem;
   margin-top: 2rem;
+}
+
+@include respond(tab-land) {
+  .SmallerSize {
+    resize: none;
+  }
 }

@@ -1,4 +1,5 @@
 @import "../../assets/Animations/Animations.module.scss";
+@import "../../assets/Mixins/Mixins.module.scss";
 
 .Page {
   display: flex;
@@ -22,8 +23,24 @@
   width: 60%;
   align-self: center;
 
+  @include respond(tab-land) {
+    width: 70%;
+  }
+
+  @include respond(tab-port) {
+    width: 85%;
+  }
+
+  @include respond(phone) {
+    font-size: 0.8rem;
+  }
+
   &:hover {
     box-shadow: 0 2rem 4rem var(--cl-orange);
+
+    @include respond(tab-land) {
+      box-shadow: none;
+    }
   }
 }
 
@@ -40,6 +57,22 @@
       "a a a . b b b"
       ". . c c c . ."
       "d d d . e e e";
+
+    @include respond(notebook) {
+      grid-template-areas:
+        "a a b b"
+        ". c c ."
+        "d d e e";
+    }
+
+    @include respond(tab-land) {
+      grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e";
+    }
   }
 
   &__Six {
@@ -75,14 +108,26 @@
 
   &__LeftAnimation {
     animation: fromLeft 2s ease;
+
+    @include respond(tab-land) {
+      animation: none;
+    }
   }
 
   &__RightAnimation {
     animation: fromRight 2s ease;
+
+    @include respond(tab-land) {
+      animation: none;
+    }
   }
 
   &__CenterAnimation {
     animation: center 2s ease;
+
+    @include respond(tab-land) {
+      animation: none;
+    }
   }
 }
 

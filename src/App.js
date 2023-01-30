@@ -9,6 +9,7 @@ function App() {
       <div className="Align">
         <Routes>
           <Route
+            exact
             path="/"
             element={
               <Page
