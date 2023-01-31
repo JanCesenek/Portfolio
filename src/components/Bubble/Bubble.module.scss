@@ -22,6 +22,7 @@
 
   @include respond(notebook) {
     width: 40rem;
+    font-size: 1rem;
   }
 
   @include respond(tab-land) {
@@ -30,8 +31,7 @@
   }
 
   &:hover {
-    width: 80rem;
-    height: 25rem;
+    transform: scale(1.2);
     box-shadow: 0 2rem 4rem var(--cl-orange);
   }
 }
@@ -48,7 +48,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.5;
 
   @include respond(hover) {

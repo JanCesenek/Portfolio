@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/redux";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -10,7 +12,14 @@ render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<App />} />
+        <Route
+          path="*"
+          element={
+            <Provider store={store}>
+              <App />
+            </Provider>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

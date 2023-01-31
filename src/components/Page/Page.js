@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import classes from "./Page.module.scss";
 import Bubble from "../Bubble/Bubble";
 import { Link } from "react-router-dom";
+import "../../../node_modules/flag-icons/css/flag-icons.min.css";
+import { useSelector, useDispatch } from "react-redux";
+import { languageActions } from "../../redux/language-slice";
 
 const Page = (props) => {
   const [animation, setAnimation] = useState(true);
@@ -24,6 +27,10 @@ const Page = (props) => {
 
   /* Controling the state of a hovered bubble - if hovered, it gains in size and the others disappear */
   const [hidden, setHidden] = useState(false);
+
+  const dispatch = useDispatch();
+
+  const checkCzech = useSelector((state) => state.language.czech);
 
   const hideBubble = () => {
     setHidden(true);
@@ -62,9 +69,21 @@ const Page = (props) => {
 
   return (
     <div className={classes.Page}>
-      {/* Title */}
-      <div className={`${classes.Title} ${animationCheck && classes.AllBubbles__CenterAnimation}`}>
-        <h1>{props.title}</h1>
+      <div className={classes.TitleHolder}>
+        {/* Title */}
+        <div
+          className={`${classes.Title} ${animationCheck && classes.AllBubbles__CenterAnimation}`}>
+          <h1>{checkCzech ? props.titleCZ : props.title}</h1>
+        </div>
+        {/* Button for switching language */}
+        <div className={classes.ButtonHolder}>
+          <div className={classes.Btn} onClick={() => dispatch(languageActions.setCzech())}>
+            <span className="fi fi-cz"></span>
+          </div>
+          <div className={classes.Btn} onClick={() => dispatch(languageActions.setEnglish())}>
+            <span className="fi fi-gb"></span>
+          </div>
+        </div>
       </div>
       <div className={classes.ArrowContainer}>
         <div className={classes.ArrowContainer__Left}>
@@ -93,8 +112,8 @@ const Page = (props) => {
             animationCheck && classes.AllBubbles__LeftAnimation
           }`}>
           <Bubble
-            title={props.firstBubbleTitle}
-            content={props.firstBubbleContent}
+            title={checkCzech ? props.firstBubbleTitleCZ : props.firstBubbleTitle}
+            content={checkCzech ? props.firstBubbleContentCZ : props.firstBubbleContent}
             link={props.firstLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}
@@ -107,8 +126,8 @@ const Page = (props) => {
             animationCheck && classes.AllBubbles__RightAnimation
           }`}>
           <Bubble
-            title={props.secondBubbleTitle}
-            content={props.secondBubbleContent}
+            title={checkCzech ? props.secondBubbleTitleCZ : props.secondBubbleTitle}
+            content={checkCzech ? props.secondBubbleContentCZ : props.secondBubbleContent}
             link={props.secondLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}
@@ -121,9 +140,9 @@ const Page = (props) => {
             animationCheck && classes.AllBubbles__CenterAnimation
           }`}>
           <Bubble
-            title={props.thirdBubbleTitle}
+            title={checkCzech ? props.thirdBubbleTitleCZ : props.thirdBubbleTitle}
             contact={props.contact}
-            content={props.thirdBubbleContent}
+            content={checkCzech ? props.thirdBubbleContentCZ : props.thirdBubbleContent}
             link={props.thirdLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}
@@ -136,8 +155,8 @@ const Page = (props) => {
             animationCheck && classes.AllBubbles__LeftAnimation
           }`}>
           <Bubble
-            title={props.fourthBubbleTitle}
-            content={props.fourthBubbleContent}
+            title={checkCzech ? props.fourthBubbleTitleCZ : props.fourthBubbleTitle}
+            content={checkCzech ? props.fourthBubbleContentCZ : props.fourthBubbleContent}
             link={props.fourthLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}
@@ -150,8 +169,8 @@ const Page = (props) => {
             animationCheck && classes.AllBubbles__RightAnimation
           }`}>
           <Bubble
-            title={props.fifthBubbleTitle}
-            content={props.fifthBubbleContent}
+            title={checkCzech ? props.fifthBubbleTitleCZ : props.fifthBubbleTitle}
+            content={checkCzech ? props.fifthBubbleContentCZ : props.fifthBubbleContent}
             link={props.fifthLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}
@@ -161,8 +180,8 @@ const Page = (props) => {
         {/* 6th bubble */}
         <div className={dynamicBubble}>
           <Bubble
-            title={props.sixthBubbleTitle}
-            content={props.sixthBubbleContent}
+            title={checkCzech ? props.sixthBubbleTitleCZ : props.sixthBubbleTitle}
+            content={checkCzech ? props.sixthBubbleContentCZ : props.sixthBubbleContent}
             link={props.sixthLink}
             visibilityStatus={hidden}
             hideBubble={hideBubble}

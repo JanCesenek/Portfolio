@@ -44,7 +44,7 @@ const Bubble = (props) => {
             </span>
           )}
           {props.link && (
-            <a href={process.env.PUBLIC_URL + props.link} target="_blank" rel="noreferrer">
+            <a href={props.link} target="_blank" rel="noreferrer">
               <img src={Stargate} alt="link" className={classes.Link} />
             </a>
           )}
