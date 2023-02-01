@@ -4,6 +4,7 @@ const languageSlice = createSlice({
   name: "language",
   initialState: {
     czech: false,
+    url: "/",
   },
   reducers: {
     setCzech(state, action) {
@@ -11,6 +12,9 @@ const languageSlice = createSlice({
     },
     setEnglish(state, action) {
       state.czech = false;
+    },
+    setUrl(state, action) {
+      state.url = action.payload;
     },
   },
 });

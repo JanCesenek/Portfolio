@@ -15,7 +15,7 @@ function App() {
               <Page
                 type="Five"
                 pageNumber="One"
-                title="Johnny Garlic - Unique websites tailored for your needs"
+                title="Johnny Garlic - Websites tailored for your needs"
                 titleCZ="Jan Česenek - Webovky šité na míru"
                 firstBubbleTitle="What is the purpose of this website?"
                 firstBubbleTitleCZ="Jaký je účel této webovky?"

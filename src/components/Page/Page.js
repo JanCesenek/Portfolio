@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./Page.module.scss";
 import Bubble from "../Bubble/Bubble";
 import { Link } from "react-router-dom";
@@ -51,6 +51,7 @@ const Page = (props) => {
     } else if (thirdPageMatch) {
       setUrl("/designs");
     }
+    setAnimation(false);
   };
 
   const rightArrowRule = () => {
@@ -61,11 +62,8 @@ const Page = (props) => {
     } else if (thirdPageMatch) {
       setUrl("/");
     }
+    setAnimation(false);
   };
-
-  useEffect(() => {
-    return;
-  });
 
   return (
     <div className={classes.Page}>
@@ -90,7 +88,7 @@ const Page = (props) => {
           <Link
             className={classes.Link}
             to={url}
-            onMouseEnter={leftArrowRule}
+            onMouseDown={leftArrowRule}
             onClick={() => setAnimation(false)}>
             &#10094;
           </Link>
@@ -99,7 +97,7 @@ const Page = (props) => {
           <Link
             className={classes.Link}
             to={url}
-            onMouseEnter={rightArrowRule}
+            onMouseDown={rightArrowRule}
             onClick={() => setAnimation(false)}>
             &#10095;
           </Link>
