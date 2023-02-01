@@ -15,6 +15,8 @@ function App() {
               <Page
                 type="Five"
                 pageNumber="One"
+                leftArrow="/apps"
+                rightArrow="/designs"
                 title="Johnny Garlic - Websites tailored for your needs"
                 titleCZ="Jan Česenek - Webovky šité na míru"
                 firstBubbleTitle="What is the purpose of this website?"
@@ -49,6 +51,8 @@ function App() {
               <Page
                 type="Six"
                 pageNumber="Two"
+                leftArrow="/"
+                rightArrow="/apps"
                 title="My projects - web designs"
                 titleCZ="Moje projekty - design webových stránek"
                 firstBubbleTitle="Travelling blog &#10004;"
@@ -95,6 +99,8 @@ function App() {
               <Page
                 type="Six"
                 pageNumber="Three"
+                leftArrow="/designs"
+                rightArrow="/"
                 title="My projects - apps and games"
                 titleCZ="Moje projekty - aplikace a hry"
                 firstBubbleTitle="Matrix banking &#10004;"

@@ -14,12 +14,6 @@ const Page = (props) => {
   const five = `${classes.AllBubbles} ${classes.AllBubbles__Five}`;
   const six = `${classes.AllBubbles} ${classes.AllBubbles__Six}`;
 
-  const pageNo = props.pageNumber;
-
-  const firstPageMatch = pageNo === "One";
-  const secondPageMatch = pageNo === "Two";
-  const thirdPageMatch = pageNo === "Three";
-
   /* Hide the 6th bubble if there's supposed to be only five or them, otherwise display it */
   const dynamicBubble = defaultPageCheck
     ? classes.Hidden
@@ -38,31 +32,6 @@ const Page = (props) => {
 
   const showBubble = () => {
     setHidden(false);
-  };
-
-  /* Conditionally setting the URL of the page */
-  const [url, setUrl] = useState("/");
-
-  const leftArrowRule = () => {
-    if (firstPageMatch) {
-      setUrl("/apps");
-    } else if (secondPageMatch) {
-      setUrl("/");
-    } else if (thirdPageMatch) {
-      setUrl("/designs");
-    }
-    setAnimation(false);
-  };
-
-  const rightArrowRule = () => {
-    if (firstPageMatch) {
-      setUrl("/designs");
-    } else if (secondPageMatch) {
-      setUrl("/apps");
-    } else if (thirdPageMatch) {
-      setUrl("/");
-    }
-    setAnimation(false);
   };
 
   return (
@@ -85,20 +54,12 @@ const Page = (props) => {
       </div>
       <div className={classes.ArrowContainer}>
         <div className={classes.ArrowContainer__Left}>
-          <Link
-            className={classes.Link}
-            to={url}
-            onMouseDown={leftArrowRule}
-            onClick={() => setAnimation(false)}>
+          <Link className={classes.Link} to={props.leftArrow} onClick={() => setAnimation(false)}>
             &#10094;
           </Link>
         </div>
         <div className={classes.ArrowContainer__Right}>
-          <Link
-            className={classes.Link}
-            to={url}
-            onMouseDown={rightArrowRule}
-            onClick={() => setAnimation(false)}>
+          <Link className={classes.Link} to={props.rightArrow} onClick={() => setAnimation(false)}>
             &#10095;
           </Link>
         </div>
