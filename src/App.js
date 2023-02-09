@@ -111,10 +111,12 @@ function App() {
                 firstBubbleContentCZ="Futuristické internetové bankovnictví. Rozhodl jsem se to trochu okořenit, aby to nevypadalo úplně nudně.
                 Hesla pro výchozí uživatele: ZT44-3333, SS188-2222, JD105-1111.
                 Poznámka autora: Za každých 10 dolarů, které si půjčíte od Matrixu, máte 30 sekund na splacení. Co se stane, když nezaplatíte? Na to si musíte přijít sami."
-                secondBubbleTitle="App 2"
-                secondBubbleTitleCZ="App 2"
-                secondBubbleContent="Answer 2"
-                secondBubbleContentCZ="Answer 2"
+                secondBubbleTitle="Man, don't get angry!"
+                secondBubbleTitleCZ="Člověče, nezlob se!"
+                secondBubbleContent="Simple board game to play, not so simple to create. Rules can be found online, although there are different variations.
+                In this case, player has to choose whether he wants to add a new piece or move another one in play before rolling the dice."
+                secondBubbleContentCZ="Jednoduchá deskovka, která překvapivě zabere hodně práce. Pravidla se dají najít na internetu, ačkoliv mají různé varianty.
+                V této variantě se hráč musí rozhodnout, jestli si chce zkusit nasadit figurku, nebo pohnout s figurkou, kterou už má ve hře předtím, než hodí kostkou."
                 thirdBubbleTitle="App 3"
                 thirdBubbleTitleCZ="App 3"
                 thirdBubbleContent="Answer 3"
@@ -132,6 +134,7 @@ function App() {
                 sixthBubbleContent="Answer 6"
                 sixthBubbleContentCZ="Answer 6"
                 firstLink="https://matrix-banking.jancesenek.dev"
+                secondLink="https://man-dont-get-angry.jancesenek.dev"
               />
             }
           />
