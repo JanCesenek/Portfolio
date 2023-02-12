@@ -134,7 +134,7 @@ function App() {
                 sixthBubbleContent="Answer 6"
                 sixthBubbleContentCZ="Answer 6"
                 firstLink="https://matrix-banking.jancesenek.dev"
-                secondLink="https://man-dont-get-angry.jancesenek.dev"
+                secondLink="https://clobrdo.jancesenek.dev"
               />
             }
           />
