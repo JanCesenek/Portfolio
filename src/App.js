@@ -14,9 +14,9 @@ function App() {
             element={
               <Page
                 type="Five"
-                pageNumber="One"
-                leftArrow="/apps"
-                rightArrow="/designs"
+                default
+                link="My projects"
+                linkCZ="Moje projekty"
                 title="Johnny Garlic - Websites tailored for your needs"
                 titleCZ="Jan Česenek - Webovky šité na míru"
                 firstBubbleTitle="What is the purpose of this website?"
@@ -27,10 +27,10 @@ function App() {
                 secondBubbleTitleCZ="Proč byste mě měli zaměstnat?"
                 secondBubbleContent="Although I don't have an IT degree, I have started from scratch learning from online courses.
                 With zero guidance from university professors, I had to make an additional effort looking for various resources as well as making a plan how to gain new skills and prioritize them by importance.
-                In my opinion, just the fact that I'm doing this on my own, shows that I'm clearly passionate about programming, I'm a quick learner, I'm creative (since I have to come up with new ideas on how to demonstrate my knowledge) and I'm ready to keep learning new things once getting a job."
+                Just the fact that I'm doing this on my own, shows that I'm clearly passionate about programming, I'm a quick learner, I'm creative (since I have to come up with new ideas on how to demonstrate my knowledge) and I'm ready to keep learning new things once getting a job."
                 secondBubbleContentCZ="Ačkoliv nemám titul v oboru, začal jsem se od začátku vzdělávat sám přes online kurzy.
                 Jelikož jsem neměl žádnou podporu univerzitního prostředí, musel jsem vyvinout dodatečnou snahu hledáním různých zdrojů stejně jako plánováním jak získat nové dovednosti a kterým dát přednost podle důležitosti.
-                Dle mého názoru už pouze skutečnost, že se programování věnuji sám, dokazuje, že jsem do toho zapálený, rychle se učím, jsem kreativní (jelikož jsem musel přijít s novými nápady, jak demonstrovat svoje znalosti) a také, že jsem připraven učit se nové věci, jakmile získám práci v oboru."
+                Už pouze skutečnost, že se programování věnuji sám, dokazuje, že jsem do toho zapálený, rychle se učím, jsem kreativní (jelikož jsem musel přijít s novými nápady, jak demonstrovat svoje znalosti) a také, že jsem připraven učit se nové věci, jakmile získám práci v oboru."
                 thirdBubbleTitle="How can you contact me?"
                 thirdBubbleTitleCZ="Jak mě můžete kontaktovat?"
                 fourthBubbleTitle="What programming languages and technologies have I already worked with?"
@@ -39,102 +39,54 @@ function App() {
                 fourthBubbleContentCZ="Základní trio pro vývoj webových stránek - (HTML, CSS, JS), React, Redux, Node.js, databáze - (mySQL, mongoDB), VBA."
                 fifthBubbleTitle="Where is the proof of my knowledge?"
                 fifthBubbleTitleCZ="Kde je důkaz mých znalostí?"
-                fifthBubbleContent="Navigate to other pages by clicking on arrows where you can see some of my finished projects with short description and links."
-                fifthBubbleContentCZ="Pomocí šipek se dostanete na další stránky, kde můžete vidět některé z mých dokončených projektů s krátkým popisem a odkazy."
+                fifthBubbleContent="Just click on the next page to see some of my finished projects."
+                fifthBubbleContentCZ="Stačí kliknout na další stránku, kde mám odkazy na svoje dokončené projekty."
                 contact
               />
             }
           />
           <Route
-            path="/designs"
+            path="/projects"
             element={
               <Page
                 type="Six"
-                pageNumber="Two"
-                leftArrow="/"
-                rightArrow="/apps"
-                title="My projects - web designs"
-                titleCZ="Moje projekty - design webových stránek"
-                firstBubbleTitle="Travelling blog &#10004;"
-                firstBubbleTitleCZ="Cestovatelský blog &#10004;"
-                firstBubbleContent="My first website ever. Simple blog about studying abroad, especially focused on
-                  the UK. As it was previously aimed to be individually deployed, but eventually left unfinished,
-                  this is the only website without lorem ipsum (randomly generated text).
-                  Note: The only thing unfinished about the project is the content, which is not
-                    important for design purposes, therefore some information may not be entirely verified!"
-                firstBubbleContentCZ="Moje první webovka vůbec. Jenoduchý blog o studiu v zahraničí, speciálně zaměřený na UK. Jelikož původní záměr byl stránku samostatně publikovat, ale nakonec zůstala nedokončena, toto je jediná stránka bez lorem ipsum (náhodně generovaný text).
-                Poznámka autora: Jediná nedokončená věc na projektu je obsah, který není důležitý z hlediska designu, takže nějaké informace nemusí být úplně ověřené!"
-                secondBubbleTitle="Chulak junk shop &#10004;"
-                secondBubbleTitleCZ="Vetešnictví Chulak &#10004;"
-                secondBubbleContent="A toy project - fictional junk shop based on my most favourite TV show Stargate.
-                  Uninitiated will probably not understand the content, but it's the design that
-                  matters, right?"
-                secondBubbleContentCZ="Tohle jsem zrovna dělal čistě pro zábavu - fiktivní vetešnictví založené na mém oblíbeném seriálu Hvězdná Brána.
-                Nezasvěcení pravděpodobně neporozumí obsahu, ale záleží přece jen na designu, nebo ne?"
+                link="Back"
+                linkCZ="Zpět"
+                title="My projects"
+                titleCZ="Moje projekty"
+                firstBubbleTitle="Wormhole Media &#10004;"
+                firstBubbleTitleCZ="Wormhole Media &#10004;"
+                firstBubbleContent="My most recent and most advanced project yet. My own social media - full-stack application with a lot of functionality. You need to create an account to proceed, after logging in you are able to CRUD posts, comments and messages, like/dislike posts, add/remove friends, as well as block other users."
+                firstBubbleContentCZ="Můj zatím nejaktuálnější a nejsložitější projekt. Vlastní sociální médium - full-stack aplikace bohatá na funkcionalitu. Musíte si založit vlastní účet, než vás aplikace pustí dál. Po přihlášení máte možnost vytvářet/upravovat/mazat příspěvky, komentáře a soukromé zprávy, pozitivně/negativně hodnotit příspěvky, přidávat/mazat přátele, stejně jako blokovat ostatní uživatele."
+                secondBubbleTitle="Man, don't get angry! &#10004;"
+                secondBubbleTitleCZ="Člověče, nezlob se! &#10004;"
+                secondBubbleContent="Board game, rules can be looked up online, although there are different variants. In this one, player has to choose if he wants to move with an active piece or add a new one before rolling the dice."
+                secondBubbleContentCZ="Desková hra, kterou asi všichni znají, pravidla se dají najít online, ačkoliv má hra více variant. V této variantě se hráč musí rozhodnout, jestli bude hrát s nasazenou figurkou, nebo si nasadí novou figurku, předtím, než hodí kostkou."
                 thirdBubbleTitle="Old website &#10004;"
                 thirdBubbleTitleCZ="Stará webovka &#10004;"
                 thirdBubbleContent="This is how my website was supposed to look, but I decided to choose a minimalistic design as I wanted it to look more professional."
                 thirdBubbleContentCZ="Takhle měla moje webovka původně vypadat, ale nakonec jsem se rozhodl pro minimalistický design, jelikož jsem chtěl, aby vypadala profesionálněji."
-                fourthBubbleTitle="Design 4"
-                fourthBubbleTitleCZ="Design 4"
-                fourthBubbleContent="Answer 4"
-                fourthBubbleContentCZ="Answer 4"
-                fifthBubbleTitle="Design 5"
-                fifthBubbleTitleCZ="Design 5"
-                fifthBubbleContent="Answer 5"
-                fifthBubbleContentCZ="Answer 5"
-                sixthBubbleTitle="Design 6"
-                sixthBubbleTitleCZ="Design 6"
-                sixthBubbleContent="Answer 6"
-                sixthBubbleContentCZ="Answer 6"
-                firstLink="https://blog.jancesenek.dev"
-                secondLink="https://chulak-junk-shop.jancesenek.dev"
-                thirdLink="https://old-website.jancesenek.dev"
-              />
-            }
-          />
-          <Route
-            path="/apps"
-            element={
-              <Page
-                type="Six"
-                pageNumber="Three"
-                leftArrow="/designs"
-                rightArrow="/"
-                title="My projects - apps and games"
-                titleCZ="Moje projekty - aplikace a hry"
-                firstBubbleTitle="Matrix banking &#10004;"
-                firstBubbleTitleCZ="Matrix banking &#10004;"
-                firstBubbleContent="Futuristic I-banking. I added some spice so it doesn't look too boring.
-                Passwords for default users: ZT44-3333, SS188-2222, JD105-1111.
-                Note: For every 10 dollars you borrow from Matrix you have 30 seconds to repay. What happens if you don't? You'll have to find out yourself."
-                firstBubbleContentCZ="Futuristické internetové bankovnictví. Rozhodl jsem se to trochu okořenit, aby to nevypadalo úplně nudně.
-                Hesla pro výchozí uživatele: ZT44-3333, SS188-2222, JD105-1111.
-                Poznámka autora: Za každých 10 dolarů, které si půjčíte od Matrixu, máte 30 sekund na splacení. Co se stane, když nezaplatíte? Na to si musíte přijít sami."
-                secondBubbleTitle="Man, don't get angry!"
-                secondBubbleTitleCZ="Člověče, nezlob se!"
-                secondBubbleContent="Simple board game to play, not so simple to create. Rules can be found online, although there are different variations.
-                In this case, player has to choose whether he wants to add a new piece or move another one in play before rolling the dice."
-                secondBubbleContentCZ="Jednoduchá deskovka, která překvapivě zabere hodně práce. Pravidla se dají najít na internetu, ačkoliv mají různé varianty.
-                V této variantě se hráč musí rozhodnout, jestli si chce zkusit nasadit figurku, nebo pohnout s figurkou, kterou už má ve hře předtím, než hodí kostkou."
-                thirdBubbleTitle="App 3"
-                thirdBubbleTitleCZ="App 3"
-                thirdBubbleContent="Answer 3"
-                thirdBubbleContentCZ="Answer 3"
-                fourthBubbleTitle="App 4"
-                fourthBubbleTitleCZ="App 4"
-                fourthBubbleContent="Answer 4"
-                fourthBubbleContentCZ="Answer 4"
-                fifthBubbleTitle="App 5"
-                fifthBubbleTitleCZ="App 5"
-                fifthBubbleContent="Answer 5"
-                fifthBubbleContentCZ="Answer 5"
-                sixthBubbleTitle="App 6"
-                sixthBubbleTitleCZ="App 6"
-                sixthBubbleContent="Answer 6"
-                sixthBubbleContentCZ="Answer 6"
-                firstLink="https://matrix-banking.jancesenek.dev"
+                fourthBubbleTitle="Chulak junk shop &#10004;"
+                fourthBubbleTitleCZ="Vetešnictví Chulak &#10004;"
+                fourthBubbleContent="A toy project - fictional junk shop based on my most favourite TV show Stargate.
+                  Uninitiated will probably not understand the content, but it's the design that
+                  matters, right?"
+                fourthBubbleContentCZ="Tohle jsem zrovna dělal čistě pro zábavu - fiktivní vetešnictví založené na mém oblíbeném seriálu Hvězdná Brána.
+                Nezasvěcení pravděpodobně neporozumí obsahu, ale záleží přece jen na designu, nebo ne?"
+                fifthBubbleTitle="Travelling blog &#10004;"
+                fifthBubbleTitleCZ="Cestovatelský blog &#10004;"
+                fifthBubbleContent="My first website ever. Simple blog about studying abroad, especially focused on
+                  the UK. As it was previously aimed to be individually deployed, but eventually left unfinished,
+                  this is the only website without lorem ipsum (randomly generated text).
+                  Note: The only thing unfinished about the project is the content, which is not
+                    important for design purposes, therefore some information may not be entirely verified!"
+                fifthBubbleContentCZ="Moje první webovka vůbec. Jednoduchý blog o studiu v zahraničí, speciálně zaměřený na UK. Jelikož původní záměr byl stránku samostatně publikovat, ale nakonec zůstala nedokončena, toto je jediná stránka bez lorem ipsum (náhodně generovaný text).
+                Poznámka autora: Jediná nedokončená věc na projektu je obsah, který není důležitý z hlediska designu, takže nějaké informace nemusí být úplně ověřené!"
+                firstLink="https://wormholemedia.jancesenek.dev"
                 secondLink="https://clobrdo.jancesenek.dev"
+                thirdLink="https://old-website.jancesenek.dev"
+                fourthLink="https://chulak-junk-shop.jancesenek.dev"
+                fifthLink="https://blog.jancesenek.dev"
               />
             }
           />

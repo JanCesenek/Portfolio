@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "./Bubble.module.scss";
-import Stargate from "../../imgs/Stargate.png";
+import { GiOpenFolder } from "react-icons/gi";
 
 const Bubble = (props) => {
   const [hovered, setHovered] = useState(false);
@@ -13,9 +13,14 @@ const Bubble = (props) => {
   const backPartClicked = clicked ? classes.FrontPart : classes.BackPart;
 
   const containerRule =
-    !hovered && props.visibilityStatus
-      ? `${classes.Container} ${classes.Hidden}`
-      : classes.Container;
+    !hovered && props.hiddenStatus ? `${classes.Container} ${classes.Hidden}` : classes.Container;
+
+  const clickedRule = clicked
+    ? `${classes.ContainerCopy} ${classes.ContainerCopyClicked}`
+    : classes.ContainerCopy;
+
+  const containerRulePhones =
+    !clicked && props.hiddenStatus ? `${classes.Container} ${classes.TrulyHidden}` : clickedRule;
 
   const enterAnimation = () => {
     setHovered(true);
@@ -27,6 +32,11 @@ const Bubble = (props) => {
     props.showBubble();
   };
 
+  const toggleAnimation = () => {
+    setClicked(!clicked);
+    props.toggleBubble();
+  };
+
   return (
     <div>
       <div className={containerRule} onMouseEnter={enterAnimation} onMouseLeave={exitAnimation}>
@@ -36,37 +46,33 @@ const Bubble = (props) => {
           <br />
           {props.contact && (
             <span>
-              <i className="fas fa-envelope"></i>
-              jan.cesenekCZ@gmail.com
+              <i className="fas fa-envelope"></i> jan.cesenekCZ@gmail.com
               <br />
-              <i className="fas fa-phone"></i>
-              +420 773 140 855
+              <i className="fas fa-phone"></i> +420 773 140 855
             </span>
           )}
           {props.link && (
             <a href={props.link} target="_blank" rel="noreferrer">
-              <img src={Stargate} alt="link" className={classes.Link} />
+              <GiOpenFolder className={classes.Link} />
             </a>
           )}
         </p>
       </div>
-      <div className={classes.ContainerCopy} onClick={() => setClicked(!clicked)}>
+      <div className={containerRulePhones} onClick={toggleAnimation}>
         <h1 className={frontPartClicked}>{props.title}</h1>
         <p className={backPartClicked}>
           {props?.content}
           <br />
           {props.contact && (
             <span>
-              <i className="fas fa-envelope"></i>
-              jan.cesenekCZ@gmail.com
+              <i className="fas fa-envelope"></i> jan.cesenekCZ@gmail.com
               <br />
-              <i className="fas fa-phone"></i>
-              +420 773 140 855
+              <i className="fas fa-phone"></i> +420 773 140 855
             </span>
           )}
           {props.link && (
             <a href={process.env.PUBLIC_URL + props.link} target="_blank" rel="noreferrer">
-              <img src={Stargate} alt="link" className={classes.Link} />
+              <GiOpenFolder className={classes.Link} />
             </a>
           )}
         </p>

@@ -2,22 +2,14 @@ import React, { useState } from "react";
 import classes from "./Page.module.scss";
 import Bubble from "../Bubble/Bubble";
 import { Link } from "react-router-dom";
-import "../../../node_modules/flag-icons/css/flag-icons.min.css";
 import { useSelector, useDispatch } from "react-redux";
 import { languageActions } from "../../redux/language-slice";
+import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
 
 const Page = (props) => {
   const [animation, setAnimation] = useState(true);
   /* Checking whether the page has five or six <Bubble /> components */
-  const defaultPageCheck = props.type === "Five";
-  const animationCheck = props.type === "Five" && animation;
   const five = `${classes.AllBubbles} ${classes.AllBubbles__Five}`;
-  const six = `${classes.AllBubbles} ${classes.AllBubbles__Six}`;
-
-  /* Hide the 6th bubble if there's supposed to be only five or them, otherwise display it */
-  const dynamicBubble = defaultPageCheck
-    ? classes.Hidden
-    : `${classes.AllBubbles__6thBubble} ${classes.AllBubbles__SingleBubble}`;
 
   /* Controling the state of a hovered bubble - if hovered, it gains in size and the others disappear */
   const [hidden, setHidden] = useState(false);
@@ -34,12 +26,15 @@ const Page = (props) => {
     setHidden(false);
   };
 
+  const toggleBubble = () => {
+    setHidden(!hidden);
+  };
+
   return (
     <div className={classes.Page}>
       <div className={classes.TitleHolder}>
         {/* Title */}
-        <div
-          className={`${classes.Title} ${animationCheck && classes.AllBubbles__CenterAnimation}`}>
+        <div className={`${classes.Title} ${animation && classes.AllBubbles__CenterAnimation}`}>
           <h1>{checkCzech ? props.titleCZ : props.title}</h1>
         </div>
         {/* Button for switching language */}
@@ -52,99 +47,94 @@ const Page = (props) => {
           </div>
         </div>
       </div>
-      <div className={classes.ArrowContainer}>
+      {!props.default ? (
         <div className={classes.ArrowContainer__Left}>
-          <Link className={classes.Link} to={props.leftArrow} onClick={() => setAnimation(false)}>
-            &#10094;
+          <Link className={classes.Link} to="/" onClick={() => setAnimation(false)}>
+            <AiFillLeftCircle /> <p>{checkCzech ? props.linkCZ : props.link}</p>
           </Link>
         </div>
+      ) : (
         <div className={classes.ArrowContainer__Right}>
-          <Link className={classes.Link} to={props.rightArrow} onClick={() => setAnimation(false)}>
-            &#10095;
+          <Link className={classes.Link} to="/projects" onClick={() => setAnimation(false)}>
+            <p>{checkCzech ? props.linkCZ : props.link}</p> <AiFillRightCircle />
           </Link>
         </div>
-      </div>
-      <div className={defaultPageCheck ? five : six}>
+      )}
+      <div className={five}>
         {/* 1st bubble */}
         <div
           className={`${classes.AllBubbles__1stBubble} ${classes.AllBubbles__SingleBubble} ${
-            animationCheck && classes.AllBubbles__LeftAnimation
+            animation && classes.AllBubbles__LeftAnimation
           }`}>
           <Bubble
-            title={checkCzech ? props.firstBubbleTitleCZ : props.firstBubbleTitle}
+            title={`${checkCzech ? props.firstBubbleTitleCZ : props.firstBubbleTitle}`}
             content={checkCzech ? props.firstBubbleContentCZ : props.firstBubbleContent}
             link={props.firstLink}
-            visibilityStatus={hidden}
+            hiddenStatus={hidden}
             hideBubble={hideBubble}
             showBubble={showBubble}
+            toggleBubble={toggleBubble}
           />
         </div>
         {/* 2nd bubble */}
         <div
           className={`${classes.AllBubbles__2ndBubble} ${classes.AllBubbles__SingleBubble} ${
-            animationCheck && classes.AllBubbles__RightAnimation
+            animation && classes.AllBubbles__RightAnimation
           }`}>
           <Bubble
             title={checkCzech ? props.secondBubbleTitleCZ : props.secondBubbleTitle}
             content={checkCzech ? props.secondBubbleContentCZ : props.secondBubbleContent}
             link={props.secondLink}
-            visibilityStatus={hidden}
+            hiddenStatus={hidden}
             hideBubble={hideBubble}
             showBubble={showBubble}
+            toggleBubble={toggleBubble}
           />
         </div>
         {/* 3rd bubble */}
         <div
           className={`${classes.AllBubbles__3rdBubble} ${classes.AllBubbles__SingleBubble} ${
-            animationCheck && classes.AllBubbles__CenterAnimation
+            animation && classes.AllBubbles__CenterAnimation
           }`}>
           <Bubble
             title={checkCzech ? props.thirdBubbleTitleCZ : props.thirdBubbleTitle}
             contact={props.contact}
             content={checkCzech ? props.thirdBubbleContentCZ : props.thirdBubbleContent}
             link={props.thirdLink}
-            visibilityStatus={hidden}
+            hiddenStatus={hidden}
             hideBubble={hideBubble}
             showBubble={showBubble}
+            toggleBubble={toggleBubble}
           />
         </div>
         {/* 4th bubble */}
         <div
           className={`${classes.AllBubbles__4thBubble} ${classes.AllBubbles__SingleBubble} ${
-            animationCheck && classes.AllBubbles__LeftAnimation
+            animation && classes.AllBubbles__LeftAnimation
           }`}>
           <Bubble
             title={checkCzech ? props.fourthBubbleTitleCZ : props.fourthBubbleTitle}
             content={checkCzech ? props.fourthBubbleContentCZ : props.fourthBubbleContent}
             link={props.fourthLink}
-            visibilityStatus={hidden}
+            hiddenStatus={hidden}
             hideBubble={hideBubble}
             showBubble={showBubble}
+            toggleBubble={toggleBubble}
           />
         </div>
         {/* 5th bubble */}
         <div
           className={`${classes.AllBubbles__5thBubble} ${classes.AllBubbles__SingleBubble} ${
-            animationCheck && classes.AllBubbles__RightAnimation
+            animation && classes.AllBubbles__RightAnimation
           }`}>
           <Bubble
             title={checkCzech ? props.fifthBubbleTitleCZ : props.fifthBubbleTitle}
             content={checkCzech ? props.fifthBubbleContentCZ : props.fifthBubbleContent}
             link={props.fifthLink}
-            visibilityStatus={hidden}
+            hiddenStatus={hidden}
             hideBubble={hideBubble}
             showBubble={showBubble}
-          />
-        </div>
-        {/* 6th bubble */}
-        <div className={dynamicBubble}>
-          <Bubble
-            title={checkCzech ? props.sixthBubbleTitleCZ : props.sixthBubbleTitle}
-            content={checkCzech ? props.sixthBubbleContentCZ : props.sixthBubbleContent}
-            link={props.sixthLink}
-            visibilityStatus={hidden}
-            hideBubble={hideBubble}
-            showBubble={showBubble}
+            toggleBubble={toggleBubble}
           />
         </div>
       </div>

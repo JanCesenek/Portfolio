@@ -3,6 +3,7 @@
 
 .Page {
   display: flex;
+  position: relative;
   flex-direction: column;
   overflow: hidden;
 
@@ -174,25 +175,40 @@
   display: none;
 }
 
-.ArrowContainer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2rem;
+.ArrowContainer__Left {
+  position: absolute;
+  top: 8rem;
+  left: 5rem;
 
-  & > *:hover {
+  & > :hover {
     cursor: pointer;
   }
+}
 
-  &__Left {
-    margin-left: 5rem;
-  }
+.ArrowContainer__Right {
+  position: absolute;
+  top: 8rem;
+  right: 5rem;
 
-  &__Right {
-    margin-right: 5rem;
+  & > :hover {
+    cursor: pointer;
   }
 }
 
 .Link {
   color: var(--cl-yellow);
   text-decoration: none;
+  display: flex;
+  align-items: center;
+
+  & > *:not(p) {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }

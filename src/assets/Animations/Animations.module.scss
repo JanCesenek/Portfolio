@@ -49,3 +49,16 @@
     filter: drop-shadow(1rem 2rem 4rem gold);
   }
 }
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    color: red;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0.5;
+    color: yellow;
+    transform: scale(1);
+  }
+}
