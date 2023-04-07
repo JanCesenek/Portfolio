@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { languageActions } from "../../redux/language-slice";
 import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
+import { GB, CZ } from "country-flag-icons/react/3x2";
 
 const Page = (props) => {
   const [animation, setAnimation] = useState(true);
@@ -40,10 +41,10 @@ const Page = (props) => {
         {/* Button for switching language */}
         <div className={classes.ButtonHolder}>
           <div className={classes.Btn} onClick={() => dispatch(languageActions.setCzech())}>
-            <span className="fi fi-cz"></span>
+            <CZ />
           </div>
           <div className={classes.Btn} onClick={() => dispatch(languageActions.setEnglish())}>
-            <span className="fi fi-gb"></span>
+            <GB />
           </div>
         </div>
       </div>
