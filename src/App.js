@@ -54,39 +54,31 @@ function App() {
                 linkCZ="Zpět"
                 title="My projects"
                 titleCZ="Moje projekty"
-                firstBubbleTitle="Wormhole Media &#10004;"
-                firstBubbleTitleCZ="Wormhole Media &#10004;"
+                firstBubbleTitle="Wormhole Media"
+                firstBubbleTitleCZ="Wormhole Media"
                 firstBubbleContent="My most recent and most advanced project yet. My own social media - full-stack application with a lot of functionality. You need to create an account to proceed, after logging in you are able to CRUD posts, comments and messages, like/dislike posts, add/remove friends, as well as block other users."
                 firstBubbleContentCZ="Můj zatím nejaktuálnější a nejsložitější projekt. Vlastní sociální médium - full-stack aplikace bohatá na funkcionalitu. Musíte si založit vlastní účet, než vás aplikace pustí dál. Po přihlášení máte možnost vytvářet/upravovat/mazat příspěvky, komentáře a soukromé zprávy, pozitivně/negativně hodnotit příspěvky, přidávat/mazat přátele, stejně jako blokovat ostatní uživatele."
-                secondBubbleTitle="Man, don't get angry! &#10004;"
-                secondBubbleTitleCZ="Člověče, nezlob se! &#10004;"
-                secondBubbleContent="Board game, rules can be looked up online, although there are different variants. In this one, player has to choose if he wants to move with an active piece or add a new one before rolling the dice."
-                secondBubbleContentCZ="Desková hra, kterou asi všichni znají, pravidla se dají najít online, ačkoliv má hra více variant. V této variantě se hráč musí rozhodnout, jestli bude hrát s nasazenou figurkou, nebo si nasadí novou figurku, předtím, než hodí kostkou."
-                thirdBubbleTitle="Old website &#10004;"
-                thirdBubbleTitleCZ="Stará webovka &#10004;"
-                thirdBubbleContent="This is how my website was supposed to look, but I decided to choose a minimalistic design as I wanted it to look more professional."
-                thirdBubbleContentCZ="Takhle měla moje webovka původně vypadat, ale nakonec jsem se rozhodl pro minimalistický design, jelikož jsem chtěl, aby vypadala profesionálněji."
-                fourthBubbleTitle="Chulak junk shop &#10004;"
-                fourthBubbleTitleCZ="Vetešnictví Chulak &#10004;"
-                fourthBubbleContent="A toy project - fictional junk shop based on my most favourite TV show Stargate.
-                  Uninitiated will probably not understand the content, but it's the design that
-                  matters, right?"
-                fourthBubbleContentCZ="Tohle jsem zrovna dělal čistě pro zábavu - fiktivní vetešnictví založené na mém oblíbeném seriálu Hvězdná Brána.
-                Nezasvěcení pravděpodobně neporozumí obsahu, ale záleží přece jen na designu, nebo ne?"
-                fifthBubbleTitle="Travelling blog &#10004;"
-                fifthBubbleTitleCZ="Cestovatelský blog &#10004;"
-                fifthBubbleContent="My first website ever. Simple blog about studying abroad, especially focused on
-                  the UK. As it was previously aimed to be individually deployed, but eventually left unfinished,
-                  this is the only website without lorem ipsum (randomly generated text).
-                  Note: The only thing unfinished about the project is the content, which is not
-                    important for design purposes, therefore some information may not be entirely verified!"
-                fifthBubbleContentCZ="Moje první webovka vůbec. Jednoduchý blog o studiu v zahraničí, speciálně zaměřený na UK. Jelikož původní záměr byl stránku samostatně publikovat, ale nakonec zůstala nedokončena, toto je jediná stránka bez lorem ipsum (náhodně generovaný text).
-                Poznámka autora: Jediná nedokončená věc na projektu je obsah, který není důležitý z hlediska designu, takže nějaké informace nemusí být úplně ověřené!"
+                secondBubbleTitle="Chulak Bazaar"
+                secondBubbleTitleCZ="Chulak Bazaar"
+                secondBubbleContent="Own e-shop. Most of its functionality is explained in the app."
+                secondBubbleContentCZ="Vlastní e-shop. Většina funkcionality je vysvětlena v samotné aplikaci."
+                thirdBubbleTitle="Man, don't get angry!"
+                thirdBubbleTitleCZ="Člověče, nezlob se!"
+                thirdBubbleContent="Board game, rules can be looked up online, although there are different variants. In this one, player has to choose if he wants to move with an active piece or add a new one before rolling the dice."
+                thirdBubbleContentCZ="Desková hra, kterou asi všichni znají, pravidla se dají najít online, ačkoliv má hra více variant. V této variantě se hráč musí rozhodnout, jestli bude hrát s nasazenou figurkou, nebo si nasadí novou figurku, předtím, než hodí kostkou."
+                fourthBubbleTitle="Matrix banking"
+                fourthBubbleTitleCZ="Matrix banking"
+                fourthBubbleContent="Fictional I-banking. Enables you to send money to other users or borrow money from the bank. It was one of my first apps, it's only frontend without DB, so refreshing the page will reset the state to default value."
+                fourthBubbleContentCZ="Fiktivní internetové bankovnictví. Zde můžete posílat peníze ostatním uživatelům nebo si půjčit peníze od banky. Jedná se o jednu z mých prvních aplikací vůbec, obsahuje pouze frontend bez databáze, takže obnovení stránky aplikaci resetuje do výchozího stavu."
+                fifthBubbleTitle="Old website"
+                fifthBubbleTitleCZ="Stará webovka"
+                fifthBubbleContent="This is how my website was supposed to look, but I decided to choose a minimalistic design as I wanted it to look more professional."
+                fifthBubbleContentCZ="Takhle měla moje webovka původně vypadat, ale nakonec jsem se rozhodl pro minimalistický design, jelikož jsem chtěl, aby vypadala profesionálněji."
                 firstLink="https://wormholemedia.jancesenek.dev"
-                secondLink="https://clobrdo.jancesenek.dev"
-                thirdLink="https://old-website.jancesenek.dev"
-                fourthLink="https://chulak-junk-shop.jancesenek.dev"
-                fifthLink="https://blog.jancesenek.dev"
+                secondLink="https://chulakbazaar.jancesenek.dev"
+                thirdLink="https://clobrdo.jancesenek.dev"
+                fourthLink="https://matrix-banking.jancesenek.dev"
+                fifthLink="https://old-website.jancesenek.dev"
               />
             }
           />
