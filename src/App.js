@@ -57,7 +57,7 @@ function App() {
                 firstBubbleTitle="Wormhole Media"
                 firstBubbleTitleCZ="Wormhole Media"
                 firstBubbleContent="My most recent and most advanced project yet. My own social media - full-stack application with a lot of functionality. You need to create an account to proceed, after logging in you are able to CRUD posts, comments and messages, like/dislike posts, add/remove friends, as well as block other users."
-                firstBubbleContentCZ="Můj zatím nejaktuálnější a nejsložitější projekt. Vlastní sociální médium - full-stack aplikace bohatá na funkcionalitu. Musíte si založit vlastní účet, než vás aplikace pustí dál. Po přihlášení máte možnost vytvářet/upravovat/mazat příspěvky, komentáře a soukromé zprávy, pozitivně/negativně hodnotit příspěvky, přidávat/mazat přátele, stejně jako blokovat ostatní uživatele."
+                firstBubbleContentCZ="Můj zatím nejaktuálnější a nejsložitější projekt. Vlastní sociální síť - full-stack aplikace bohatá na funkcionalitu. Musíte si založit vlastní účet, než vás aplikace pustí dál. Po přihlášení máte možnost vytvářet/upravovat/mazat příspěvky, komentáře a soukromé zprávy, pozitivně/negativně hodnotit příspěvky, přidávat/mazat přátele, stejně jako blokovat ostatní uživatele."
                 secondBubbleTitle="Chulak Bazaar"
                 secondBubbleTitleCZ="Chulak Bazaar"
                 secondBubbleContent="Own e-shop. Most of its functionality is explained in the app."
