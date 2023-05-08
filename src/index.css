@@ -20,6 +20,12 @@ html {
   }
 }
 
+@media (min-width: 2200px) {
+  html {
+    font-size: 75%;
+  }
+}
+
 body {
   --cl-black: #000;
   --cl-yellow: #ffd500;
