@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import classes from "./Bubble.module.scss";
+import { BsQrCode } from "react-icons/bs";
 import { GiOpenFolder } from "react-icons/gi";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const Bubble = (props) => {
   const [hovered, setHovered] = useState(false);
   const [clicked, setClicked] = useState(false);
+
+  const checkCzech = useSelector((state) => state.language.czech);
 
   const frontPartRule = hovered ? classes.BackPart : classes.FrontPart;
   const backPartRule = hovered ? classes.FrontPart : classes.BackPart;
@@ -41,8 +46,8 @@ const Bubble = (props) => {
     <div>
       <div className={containerRule} onMouseEnter={enterAnimation} onMouseLeave={exitAnimation}>
         <h1 className={frontPartRule}>{props.title}</h1>
-        <p className={backPartRule}>
-          {props?.content}
+        <div className={backPartRule}>
+          <span className={classes.Bold}>{props?.content}</span>
           <br />
           {props.contact && (
             <span>
@@ -51,16 +56,27 @@ const Bubble = (props) => {
               <i className="fas fa-phone"></i> +420 773 140 855
             </span>
           )}
-          {props.link && (
-            <a href={props.link} target="_blank" rel="noreferrer">
-              <GiOpenFolder className={classes.Link} />
-            </a>
+          {props.functionality && (
+            <div className={classes.LinkContainer}>
+              <p>{checkCzech ? "Podropný popis zde - " : "Detailed description here - "}</p>
+              <Link to={props.functionality}>
+                <BsQrCode className={classes.Link} />
+              </Link>
+            </div>
           )}
-        </p>
+          {props.link && (
+            <div className={classes.LinkContainer}>
+              <p>{checkCzech ? "Odkaz na aplikaci zde - " : "Link to the app here - "}</p>
+              <a href={props.link} target="_blank" rel="noreferrer">
+                <GiOpenFolder className={classes.Link} />
+              </a>
+            </div>
+          )}
+        </div>
       </div>
       <div className={containerRulePhones} onClick={toggleAnimation}>
         <h1 className={frontPartClicked}>{props.title}</h1>
-        <p className={backPartClicked}>
+        <div className={backPartClicked}>
           {props?.content}
           <br />
           {props.contact && (
@@ -70,12 +86,23 @@ const Bubble = (props) => {
               <i className="fas fa-phone"></i> +420 773 140 855
             </span>
           )}
-          {props.link && (
-            <a href={process.env.PUBLIC_URL + props.link} target="_blank" rel="noreferrer">
-              <GiOpenFolder className={classes.Link} />
-            </a>
+          {props.functionality && (
+            <div className={classes.LinkContainer}>
+              <p>{checkCzech ? "Podropný popis zde - " : "Detailed description here - "}</p>
+              <Link to={props.functionality}>
+                <BsQrCode className={classes.Link} />
+              </Link>
+            </div>
           )}
-        </p>
+          {props.link && (
+            <div className={classes.LinkContainer}>
+              <p>{checkCzech ? "Odkaz na aplikaci zde - " : "Link to the app here - "}</p>
+              <a href={props.link} target="_blank" rel="noreferrer">
+                <GiOpenFolder className={classes.Link} />
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

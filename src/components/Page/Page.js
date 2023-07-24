@@ -70,6 +70,7 @@ const Page = (props) => {
           <Bubble
             title={`${checkCzech ? props.firstBubbleTitleCZ : props.firstBubbleTitle}`}
             content={checkCzech ? props.firstBubbleContentCZ : props.firstBubbleContent}
+            functionality={props.firstFunctionality}
             link={props.firstLink}
             hiddenStatus={hidden}
             hideBubble={hideBubble}
@@ -85,6 +86,7 @@ const Page = (props) => {
           <Bubble
             title={checkCzech ? props.secondBubbleTitleCZ : props.secondBubbleTitle}
             content={checkCzech ? props.secondBubbleContentCZ : props.secondBubbleContent}
+            functionality={props.secondFunctionality}
             link={props.secondLink}
             hiddenStatus={hidden}
             hideBubble={hideBubble}
@@ -101,6 +103,7 @@ const Page = (props) => {
             title={checkCzech ? props.thirdBubbleTitleCZ : props.thirdBubbleTitle}
             contact={props.contact}
             content={checkCzech ? props.thirdBubbleContentCZ : props.thirdBubbleContent}
+            functionality={props.thirdFunctionality}
             link={props.thirdLink}
             hiddenStatus={hidden}
             hideBubble={hideBubble}

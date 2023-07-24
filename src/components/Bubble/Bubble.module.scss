@@ -11,6 +11,7 @@
   background-color: var(--cl-black);
   color: var(--cl-yellow);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1.3rem;
@@ -47,6 +48,7 @@
   background-color: var(--cl-black);
   color: var(--cl-yellow);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   font-size: 1rem;
@@ -91,7 +93,7 @@
   width: 2rem;
   height: 2rem;
   color: yellow;
-  margin-top: 2rem;
+  margin-left: 1rem;
   animation: pulse 2s infinite;
 }
 
@@ -99,4 +101,14 @@
   .SmallerSize {
     resize: none;
   }
+}
+
+.LinkContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Bold {
+  font-weight: 800;
 }
